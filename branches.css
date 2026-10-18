@@ -1,0 +1,79 @@
+/* ============================================================
+   Branches page + branch cards (admin + public)
+   Loaded after styles.css — uses the same theme variables.
+   ============================================================ */
+
+.branches-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:1.4rem;
+  margin-top:2.5rem;
+}
+
+.branch-card{
+  border:1px solid var(--line);
+  border-radius:6px;
+  overflow:hidden;
+  background:var(--bg-elev);
+  transition:transform .35s var(--ease), border-color .35s;
+  display:flex;
+  flex-direction:column;
+}
+.branch-card:hover{transform:translateY(-5px);border-color:var(--line-strong);}
+
+.branch-photo{
+  position:relative;
+  aspect-ratio:4/3;
+  background:var(--bg-elev-2);
+  overflow:hidden;
+}
+.branch-photo img{width:100%;height:100%;object-fit:cover;}
+.branch-photo .ph-fallback{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:var(--muted-2);font-family:'Fraunces',serif;font-style:italic;font-size:0.9rem;
+}
+
+.branch-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:0.3rem;flex:1;}
+.branch-name{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--ink);}
+.branch-pastor-name{font-size:0.95rem;color:var(--gold-2);margin-top:0.3rem;}
+.branch-pastor-role{font-size:0.78rem;color:var(--muted-2);letter-spacing:0.03em;}
+.branch-bio{font-size:0.88rem;color:var(--muted);margin-top:0.6rem;line-height:1.6;flex:1;}
+.branch-meta{
+  margin-top:1rem;padding-top:0.9rem;border-top:1px solid var(--line);
+  display:flex;flex-direction:column;gap:0.3rem;font-size:0.82rem;color:var(--muted);
+}
+.branch-meta a{color:var(--muted);}
+.branch-meta a:hover{color:var(--gold-2);}
+
+/* ---------- admin: branch manager ---------- */
+.branch-admin-list{display:flex;flex-direction:column;gap:1rem;margin-top:1rem;}
+.branch-admin-row{
+  display:grid;
+  grid-template-columns:72px 1fr auto;
+  gap:1rem;
+  align-items:center;
+  padding:0.9rem;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:var(--bg-elev-2);
+}
+.branch-admin-row .thumb{
+  width:72px;height:72px;border-radius:4px;overflow:hidden;background:var(--bg-elev);
+  display:flex;align-items:center;justify-content:center;flex:none;
+}
+.branch-admin-row .thumb img{width:100%;height:100%;object-fit:cover;}
+.branch-admin-row .info strong{display:block;font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);}
+.branch-admin-row .info span{display:block;font-size:0.8rem;color:var(--muted);margin-top:0.2rem;}
+.branch-admin-row .row-actions{display:flex;gap:0.5rem;}
+
+.branch-form{
+  margin-top:1.4rem;padding-top:1.4rem;border-top:1px dashed var(--line-strong);
+}
+.branch-form h3{font-size:1rem;margin-bottom:1rem;color:var(--muted-2);font-weight:500;}
+.branch-upload-row{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+.branch-upload-row .thumb{
+  width:64px;height:64px;border-radius:4px;overflow:hidden;background:var(--bg-elev-2);
+  display:flex;align-items:center;justify-content:center;flex:none;border:1px solid var(--line-strong);
+}
+.branch-upload-row .thumb img{width:100%;height:100%;object-fit:cover;}
+.branch-upload-row input[type="file"]{font-size:0.8rem;color:var(--muted);}
